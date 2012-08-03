@@ -40,7 +40,7 @@
 		<tbody>
 			<tr>
 				<td>1</td>
-				<td>Petar Peric</td>
+				<td>Petar Peric 2</td>
 			</tr>
 						<tr>
 				<td>1</td>
