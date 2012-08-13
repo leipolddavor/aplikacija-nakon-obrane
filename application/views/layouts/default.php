@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>Aplikacija za kreiranje momcadi i rezervaciju terena</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -46,10 +46,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Aplikacija za rezervaciju terena sportskog centra</a>
+          <a class="brand" href="#">Aplikacija za kreiranje momcadi i rezervaciju terena</a>
           <div class="btn-group pull-right">
             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-              <i class="icon-user"></i> Username
+              <i class="icon-user"></i> Korisničko ime
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">

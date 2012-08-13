@@ -16,4 +16,5 @@ class User extends CI_Controller {
 	public function registracija() {
 		$this->layout->view('user/registracija');
 	}
+	
 }
