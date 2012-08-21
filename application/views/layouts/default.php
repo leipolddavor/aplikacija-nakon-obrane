@@ -48,15 +48,21 @@
           </a>
           <a class="brand" href="#">Aplikacija za kreiranje momcadi i rezervaciju terena</a>
           <div class="btn-group pull-right">
-            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-              <i class="icon-user"></i> Korisničko ime
+		  <?php if(!$this->tank_auth->is_logged_in()): ?>
+            <a class="btn dropdown-toggle" href="<?php echo base_url("auth/login");?>">
+				<i class="icon-user"></i> Prijava
+			</a>
+			<?php else: ?>
+			<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			  <i class="icon-user"></i> Bok, <?php echo $this->session->userdata['username']; ?>
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
               <li><a href="#">Profile</a></li>
               <li class="divider"></li>
-              <li><a href="#">Sign Out</a></li>
+              <li><a href="<?php echo base_url();?>auth/logout">Odjava</a></li>
             </ul>
+			<?php endif; ?>
           </div>
 
         </div>
@@ -70,7 +76,9 @@
 			<div class="tabbable tabs-left">
 			  <ul class="nav nav-tabs">
 				<li <?php if(uri_string() == "home/index") echo "class='active'" ?>><a href="<?php echo base_url("home/index");?>">Početna</a></li>
-				<li <?php if(uri_string() == "user/registracija") echo "class='active'" ?>><a href="<?php echo base_url("user/registracija");?>">Registracija</a></li>
+				<?php if(!$this->tank_auth->is_logged_in()):?>
+				<li <?php if(uri_string() == "auth/register") echo "class='active'" ?>><a href="<?php echo base_url("auth/register");?>">Registracija</a></li>
+				<?php endif;?>
 				<li><a href="#">&nbsp;</a></li>
 				<li <?php if(uri_string() == "user/podaci") echo "class='active'" ?>><a href="<?php echo base_url("user/podaci");?>">Moji podaci</a></li>
 				<li <?php if(uri_string() == "user/prijave") echo "class='active'" ?>><a href="<?php echo base_url("user/prijave");?>">Moje prijave</a></li>
@@ -95,6 +103,6 @@
 
     </div><!--/.fluid-container-->
 
-
+	<script type="text/javascript" src="<?php echo base_url();?>public/js/bootstrap.min.js"></script>
   </body>
 </html>
