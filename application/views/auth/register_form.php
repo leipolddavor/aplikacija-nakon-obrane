@@ -34,9 +34,52 @@ $captcha = array(
 	'id'	=> 'captcha',
 	'maxlength'	=> 8,
 );
+
+$ime = array(
+	'name'	=> 'ime',
+	'id'	=> 'ime',
+	'value' => set_value('ime')
+);
+$prezime = array(
+	'name'	=> 'prezime',
+	'id'	=> 'prezime',
+	'value' => set_value('prezime')
+);
+
+$mjesto = array(
+	'name'	=> 'mjesto',
+	'id'	=> 'mjesto',
+	'value' => set_value('mjesto')
+);
+$mobitel = array(
+	'name'	=> 'mobitel',
+	'id'	=> 'mobitel',
+	'value' => set_value('mobitel')
+);
+
 ?>
 <?php echo form_open($this->uri->uri_string()); ?>
 <table>
+	<tr>
+		<td><?php echo form_label('Ime', $ime['id']); ?></td>
+		<td><?php echo form_input($ime); ?></td>
+		<td style="color: red;"><?php echo form_error($ime['name']); ?><?php echo isset($errors[$ime['name']])?$errors[$ime['name']]:''; ?></td>
+	</tr>
+	<tr>
+		<td><?php echo form_label('Prezime', $prezime['id']); ?></td>
+		<td><?php echo form_input($prezime); ?></td>
+		<td style="color: red;"><?php echo form_error($prezime['name']); ?><?php echo isset($errors[$prezime['name']])?$errors[$prezime['name']]:''; ?></td>
+	</tr>
+	<tr>
+		<td><?php echo form_label('Mobitel', $mobitel['id']); ?></td>
+		<td><?php echo form_input($mobitel); ?></td>
+		<td style="color: red;"><?php echo form_error($mobitel['name']); ?><?php echo isset($errors[$mobitel['name']])?$errors[$mobitel['name']]:''; ?></td>
+	</tr>
+	<tr>
+		<td><?php echo form_label('Mjesto', $mjesto['id']); ?></td>
+		<td><?php echo form_input($mjesto); ?></td>
+		<td style="color: red;"><?php echo form_error($mjesto['name']); ?><?php echo isset($errors[$mjesto['name']])?$errors[$mjesto['name']]:''; ?></td>
+	</tr>
 	<?php if ($use_username) { ?>
 	<tr>
 		<td><?php echo form_label('Username', $username['id']); ?></td>

@@ -9,7 +9,10 @@ class Sportovi extends CI_Controller {
 		$this->layout->view('sportovi/kosarka');
 	}
 	public function nogomet() {
-		$this->layout->view('sportovi/nogomet');
+		$this->load->model('sportovi/sportovimodel');
+		$data = array( "korisnik" => $this->sportovimodel->dohvatiKorisnikeUTerminu(1) );
+		
+		$this->layout->view('sportovi/nogomet', $data);
 	}
 	public function odbojka() {
 		$this->layout->view('sportovi/odbojka');
